@@ -1,11 +1,16 @@
 type HashtagItemProps = {
+  className?: string;
   company: string;
   onClick: () => void;
 };
 
-export default function HashtagItem({ company, onClick }: HashtagItemProps) {
+export default function HashtagItem({
+  className,
+  company,
+  onClick
+}: HashtagItemProps) {
   return (
-    <li>
+    <li className={className}>
       <button onClick={onClick}>#{company}</button>
     </li>
   );

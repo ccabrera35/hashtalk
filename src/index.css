@@ -536,12 +536,13 @@ form button span::selection {
 }
 
 .hashtags li button:hover,
-.hashtags li button:focus {
+.hashtags li button:focus-visible {
   color: #fff;
   transform: scale(1.11);
 }
 
-.hashtags li button:active {
+.hashtags .selected-hashtag button {
+  color: #fff;
   transform: scale(1.06);
 }
 

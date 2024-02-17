@@ -12,6 +12,9 @@ export default function HashtagList() {
     <ul className="hashtags">
       {companyList.map((company) => (
         <HashtagItem
+          className={
+            selectedCompany === company ? "selected-hashtag" : undefined
+          }
           company={company}
           onClick={() => {
             if (selectedCompany === company) {
