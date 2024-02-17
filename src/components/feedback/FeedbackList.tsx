@@ -1,7 +1,7 @@
 import FeedbackItem from "./FeedbackItem";
 import Spinner from "../Spinner";
 import ErrorMessage from "../ErrorMessage";
-import { useFeedbackItemsStore } from "../../stores/FeedbackItemsStore";
+import { useFeedbackItemsStore } from "../../stores/feedbackItemsStore";
 
 export default function FeedbackList() {
   const isLoading = useFeedbackItemsStore((state) => state.isLoading);
@@ -9,13 +9,20 @@ export default function FeedbackList() {
     state.getFilteredFeedbackItems()
   );
   const errorMessage = useFeedbackItemsStore((state) => state.errorMessage);
+  const updateVoteCount = useFeedbackItemsStore(
+    (state) => state.updateVoteCount
+  );
 
   return (
     <ol className="feedback-list">
       {isLoading && <Spinner />}
       {errorMessage && <ErrorMessage message={errorMessage} />}
       {filteredFeedbackItems.map((feedbackItem) => (
-        <FeedbackItem key={feedbackItem.id} feedbackItem={feedbackItem} />
+        <FeedbackItem
+          key={feedbackItem.id}
+          feedbackItem={feedbackItem}
+          updateVoteOnDB={updateVoteCount}
+        />
       ))}
     </ol>
   );

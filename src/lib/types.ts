@@ -1,8 +1,8 @@
 export type TFeedbackItem = {
-  id: number,
+  id: number;
   upvote_count: number;
   badge_letter: string;
   company: string;
   text: string;
-  days_ago: number;
+  created_at: string | number | Date;
 };
