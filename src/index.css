@@ -511,9 +511,10 @@ form button span::selection {
 .hashtags {
   position: absolute;
   right: -137px;
-  top: 0px;
+  top: -10px;
   height: 100%;
   overflow: scroll;
+  padding: 10px;
 }
 
 .hashtags li {
