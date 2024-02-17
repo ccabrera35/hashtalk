@@ -1,15 +1,12 @@
 type HashtagItemProps = {
   company: string;
-  onSelectCompany: (company: string) => void;
+  onClick: () => void;
 };
 
-export default function HashtagItem({
-  company,
-  onSelectCompany
-}: HashtagItemProps) {
+export default function HashtagItem({ company, onClick }: HashtagItemProps) {
   return (
     <li>
-      <button onClick={() => onSelectCompany(company)}>#{company}</button>
+      <button onClick={onClick}>#{company}</button>
     </li>
   );
 }
